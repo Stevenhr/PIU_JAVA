@@ -6,7 +6,10 @@
 package controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -16,5 +19,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/registroForm.htm")
 public class RegistroController {
     
+    @RequestMapping(method = RequestMethod.GET)
+    public String get_data(){
+        return "";
+    }
     
+    @RequestMapping(method = RequestMethod.POST)
+    public String post_data(@RequestParam("txt_id") String id, @RequestParam("i_ciudad") int id_ciudad, Model m){
+        return "";
+    }
 }
