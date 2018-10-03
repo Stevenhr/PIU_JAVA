@@ -8,7 +8,7 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="${pageContext.request.contextPath}/WEB-INF/jsp/form/formulario.jsp">Formulario <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/formulario.htm">Formulario <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#">Reporte</a>
