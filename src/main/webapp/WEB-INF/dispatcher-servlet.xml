@@ -22,6 +22,7 @@
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
     
     <mvc:view-controller path="/formulario.htm" view-name="/form/formulario"/>
+    <mvc:view-controller path="/reporte.htm" view-name="/form/reporte"/>
     
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but

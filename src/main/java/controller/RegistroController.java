@@ -5,18 +5,21 @@
  */
 package controller;
 
+import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.portlet.ModelAndView;
 
 /**
  *
  * @author estev
  */
 @Controller
-@RequestMapping("/registroForm.htm")
+@RequestMapping("/registroUsuario.htm")
 public class RegistroController {
     
     @RequestMapping(method = RequestMethod.GET)
@@ -25,7 +28,10 @@ public class RegistroController {
     }
     
     @RequestMapping(method = RequestMethod.POST)
-    public String post_data(@RequestParam("txt_id") String id, @RequestParam("i_ciudad") int id_ciudad, Model m){
-        return "";
+    public ModelAndView post_data(@Valid @RequestParam("vc_nombre") String _vc_nombre, @Valid @RequestParam("vc_apellido") String _vc_apellido, @RequestParam("vc_tipo_documento") String _vc_tipo_documento, @RequestParam("i_cedula") int _i_cedula, @RequestParam("i_ciudad") int _i_ciudad, @RequestParam("tx_observacion") String _tx_observacion,  Model m , BindingResult result){
+        ModelAndView model = new ModelAndView();
+        model.setViewName(result.hasErrors() ? "formulario" : "userReady");
+        
+        return model;
     }
 }

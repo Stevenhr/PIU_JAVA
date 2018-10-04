@@ -7,14 +7,12 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/encabezado/encabezado.jsp"/>  
-        <script src="${pageContext.request.contextPath}/js/formulario.js"></script>
+        <script src="./public/js/formulario.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <jsp:include page="/WEB-INF/encabezado/menu.jsp"/> 
-                <js:include page="${pageContext.request.contextPath}/js/formulario.js"/> 
-                
             </div>
             
             <div class="row">
@@ -26,41 +24,67 @@
                     <h1>Formulario Registro de Usuarios</b></h1>
                 </div>
                 
-                <div class="col-12 col-md-12">
-                    <form method="post" id="registro_datos">
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Email address</label>
-                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                
+                <form method="post" id="registro_datos" class="row" action="registroUsuario.htm">
+
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="vc_nombre">Nombre</label>
+                              <input type="text" class="form-control" id="vc_nombre" name="vc_nombre" placeholder="Nombre">
+                              <label cssErrorClass="formFieldError" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlSelect1">Example select</label>
-                          <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
+                        
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="vc_nombre">Apellido</label>
+                              <input type="text" class="form-control" id="vc_apellido" name="vc_apellido" placeholder="Apellido">
+                              <label cssErrorClass="formFieldError" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlSelect2">Example multiple select</label>
-                          <select multiple class="form-control" id="exampleFormControlSelect2">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                          </select>
+                        
+                        
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect1">Tipo de documento</label>
+                              <select class="form-control" id="vc_tipo_documento" name="vc_tipo_documento">
+                                <option>Cedula</option>
+                                <option>Tarjeta</option>
+                                <option>Registro</option>
+                                <option>Pasaporte</option>
+                              </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlTextarea1">Example textarea</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="vc_nombre">Numero de cédula</label>
+                              <input type="text" class="form-control" id="i_cedula" name="i_cedula" placeholder="Cedula" onKeyPress="return esNumerico( event )">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <button type="submit" id="btn_registrar" class="btn btn-primary btn-sm">Registro de datos</button>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="exampleFormControlSelect2">Ciudad</label>
+                              <select class="form-control" id="i_ciudad" name="i_ciudad">
+                                  <option value="1" >Madrid</option>
+                                  <option value="2" >Facativa</option>
+                                  <option value="3" >Mosquera</option>
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Observaciones</label>
+                              <textarea class="form-control" id="tx_observacion"  name="tx_observacion" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-group">
+                                <button type="submit" id="btn_registrar" class="btn btn-primary btn-sm">Registro de datos</button>
+                            </div>
                         </div>
                     </form>
-                </div>                
+                                
             </div>
 
             

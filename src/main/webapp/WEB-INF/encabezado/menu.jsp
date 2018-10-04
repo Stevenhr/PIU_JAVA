@@ -11,7 +11,7 @@
                                     <a class="nav-link" href="${pageContext.request.contextPath}/formulario.htm">Formulario <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Reporte</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/reporte.htm">Reporte</a>
                                 </li>                                
                             </ul>
                         </div>
